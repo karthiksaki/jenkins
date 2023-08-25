@@ -6,7 +6,13 @@ pipeline {
         docker { image 'maven:3.8.1-adoptopenjdk-11' }
       }
       steps {
-        sh 'mvn --version'
+        script {
+            public class HelloWorld {
+                public static void main (String[] args) {
+                    System.out.println("Hello, World!!");
+                }
+            }
+        }
       }
     }
     stage('Front-end') {
@@ -14,7 +20,9 @@ pipeline {
         docker { image 'node:16-alpine' }
       }
       steps {
-       console.log("Hello, World!");
+        script {
+            console.log("Hello, World!")
+        }
       }
     }
   }
