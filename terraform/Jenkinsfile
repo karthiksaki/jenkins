@@ -6,7 +6,7 @@ pipline {
     stages {
         stage('downloading from git'){
             steps{
-                git branch: 'main', credentialsId: 'testpipeline', url: 'https://github.com/karthiksaki/jenkins/main/terraform/JenkinsCICD.git'
+                git branch: 'main',  url: 'https://github.com/karthiksaki/jenkins/main/terraform/JenkinsCICD.git'
             }
         }
         stage('Terraform Init'){
